@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("../../pages/CatalogPage/CatalogPage"));
@@ -8,18 +8,19 @@ const FavoritesPage = lazy(() =>
 );
 
 import "./App.module.css";
+import Layout from "../Layout/Layout";
 
 function App() {
   return (
     <>
-      <Suspense fallback={<div>Please wait</div>}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </Suspense>
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </>
   );
 }
