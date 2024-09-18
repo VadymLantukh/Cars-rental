@@ -1,5 +1,4 @@
 export const brandOptions = [
-  
   { value: "Buick", label: "Buick" },
   { value: "Volvo", label: "Volvo" },
   { value: "HUMMER", label: "HUMMER" },
