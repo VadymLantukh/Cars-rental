@@ -1,7 +1,9 @@
-// import css from "./CarItem.module.css";
+import css from "./CarItem.module.css";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../redux/cars/carsSlice";
+import { openModal } from "../../redux/modal/slice";
+import { selectFavoriteCars } from "../../redux/cars/selectors";
 
 const CarItem = ({
   id,
@@ -14,6 +16,12 @@ const CarItem = ({
   rentalCompany,
   type,
   functionalities,
+  fuelConsumption,
+  engineSize,
+  description,
+  accessories,
+  rentalConditions,
+  mileage,
 }) => {
   const dispatch = useDispatch();
 
@@ -21,8 +29,32 @@ const CarItem = ({
     dispatch(toggleFavorite(id));
   };
 
+  const isFavorite = useSelector(selectFavoriteCars).includes(id);
+
+  const handleLearnMore = () => {
+    dispatch(
+      openModal({
+        id,
+        img,
+        make,
+        model,
+        year,
+        rentalPrice,
+        type,
+        functionalities,
+        address,
+        fuelConsumption,
+        engineSize,
+        description,
+        accessories,
+        rentalConditions,
+        mileage,
+      })
+    );
+  };
+
   return (
-    <div>
+    <>
       <img src={img} alt={`${make} ${model}`} width="274px" height="268px" />
       <div>
         <p>
@@ -40,11 +72,24 @@ const CarItem = ({
         <p>{functionalities?.[0]}</p>
       </div>
 
-      <button type="button">Learn more</button>
-      <button type="button" onClick={handleToggleFavorite}>
-        Add fav
+      <button type="button" onClick={handleLearnMore}>
+        Learn more
       </button>
-    </div>
+
+      <button
+        className={css.btnFavorite}
+        type="button"
+        onClick={handleToggleFavorite}
+      >
+        <svg className={css.iconFavorite} width="18" height="18">
+          <use
+            href={`../../../src/img/symbol-defs.svg#${
+              isFavorite ? "active" : "normal"
+            }`}
+          />
+        </svg>
+      </button>
+    </>
   );
 };
 

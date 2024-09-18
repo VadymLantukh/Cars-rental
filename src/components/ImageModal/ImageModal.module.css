@@ -1,0 +1,10 @@
+.btnCloseModal {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  transition: transform, 350ms linear;
+}
+
+.btnCloseModal:hover {
+  transform: scale(1.10);
+}

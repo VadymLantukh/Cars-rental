@@ -6,6 +6,7 @@ import FilterCar from "../../components/FilterCar/FilterCar";
 import { fetchMoreCarsThunk } from "../../redux/cars/operations";
 import { useState } from "react";
 import { selectFilterCars, selectIsLoading } from "../../redux/cars/selectors";
+import ImageModal from "../../components/ImageModal/ImageModal";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const CatalogPage = () => {
     <div>
       <FilterCar />
       <CarList />
+      <ImageModal />
       {isLoading && <p>Загрузка</p>}
       {isLastPage ? (
         <p>Sorry</p>
