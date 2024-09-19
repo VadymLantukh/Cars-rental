@@ -5,7 +5,8 @@
 }
 
 .boxInfo {
-  width: 660px;
+  text-align: center;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   gap: 20px;

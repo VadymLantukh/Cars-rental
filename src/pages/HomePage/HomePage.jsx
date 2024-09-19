@@ -25,13 +25,6 @@ const HomePage = () => {
           We hope you will like our app and use it everyday, thank you ;)
         </p>
       </div>
-      <img
-        className={css.photoHome}
-        src="../../../src/images/rental_photo_Home.webp"
-        alt="rental photo"
-        width="620px"
-        height="520px"
-      />
     </div>
   );
 };

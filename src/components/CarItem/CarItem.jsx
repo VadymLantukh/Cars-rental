@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../redux/cars/carsSlice";
 import { openModal } from "../../redux/modal/slice";
 import { selectFavoriteCars } from "../../redux/cars/selectors";
-import { MdFavoriteBorder, MdOutlineFavoriteBorder } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 
 const CarItem = ({
   id,
@@ -86,7 +86,11 @@ const CarItem = ({
         type="button"
         onClick={handleToggleFavorite}
       >
-        {isFavorite ? <MdFavoriteBorder  /> : <MdOutlineFavoriteBorder />}
+        {isFavorite ? (
+          <MdOutlineFavorite size="20px" color="#3470ff" />
+        ) : (
+          <MdFavoriteBorder size="20px" color="#3470ff" />
+        )}
       </button>
     </>
   );
