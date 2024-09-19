@@ -2,9 +2,8 @@ import { NavLink } from "react-router-dom";
 import css from "./Navigate.module.css";
 
 const Navigate = () => {
-
   return (
-    <nav className={ css.navBox}>
+    <nav className={css.navBox}>
       <NavLink className={css.navLink} to="/">
         Home
       </NavLink>

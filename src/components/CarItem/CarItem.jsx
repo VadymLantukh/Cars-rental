@@ -1,10 +1,11 @@
-import css from "./CarItem.module.css";
-
 import { useDispatch, useSelector } from "react-redux";
+import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
+
 import { toggleFavorite } from "../../redux/cars/carsSlice";
 import { openModal } from "../../redux/modal/slice";
 import { selectFavoriteCars } from "../../redux/cars/selectors";
-import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
+
+import css from "./CarItem.module.css";
 
 const CarItem = ({
   id,

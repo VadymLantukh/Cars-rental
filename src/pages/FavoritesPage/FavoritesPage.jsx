@@ -1,11 +1,12 @@
-import css from "./FavoritesPage.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 import { selectFilterFavorite } from "../../redux/cars/selectors";
 import CarItem from "../../components/CarItem/CarItem";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { fetchCarsThunk } from "../../redux/cars/operations";
 import ImageModal from "../../components/ImageModal/ImageModal";
+
+import css from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
   const favoriteCars = useSelector(selectFilterFavorite);

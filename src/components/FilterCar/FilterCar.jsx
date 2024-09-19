@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
+
 import { brandOptions, priceOptions } from "../../helpers/brandAndPrice";
 import { filterCars } from "../../redux/cars/carsSlice";
+
 import css from "./FilterCar.module.css";
 
 const FilterCar = () => {

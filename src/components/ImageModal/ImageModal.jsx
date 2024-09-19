@@ -1,10 +1,11 @@
 import ReactModal from "react-modal";
-import { customStyle } from "../../helpers/modalStyles";
 import { useDispatch, useSelector } from "react-redux";
+
+import { customStyle } from "../../helpers/modalStyles";
 import { selectCar, selectIsOpenModal } from "../../redux/modal/selectors";
 import { closeModal } from "../../redux/modal/slice";
-import css from "./ImageModal.module.css";
 
+import css from "./ImageModal.module.css";
 ReactModal.setAppElement("#root");
 
 const ImageModal = () => {

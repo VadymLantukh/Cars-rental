@@ -1,14 +1,15 @@
-import css from "./CatalogPage.module.css";
-
+import toast from "react-hot-toast";
+import { PulseLoader } from "react-spinners";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+
 import CarList from "../../components/CarList/CarList";
 import FilterCar from "../../components/FilterCar/FilterCar";
 import { fetchMoreCarsThunk } from "../../redux/cars/operations";
-import { useEffect, useState } from "react";
 import { selectFilterCars, selectIsLoading } from "../../redux/cars/selectors";
 import ImageModal from "../../components/ImageModal/ImageModal";
-import toast from "react-hot-toast";
-import { PulseLoader } from "react-spinners";
+
+import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
