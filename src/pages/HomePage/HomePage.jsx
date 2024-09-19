@@ -27,7 +27,7 @@ const HomePage = () => {
       </div>
       <img
         className={css.photoHome}
-        src="../../img/rental_photo_Home.png"
+        src="../../../src/img/rental_photo_Home.webp"
         alt="rental photo"
         width="620px"
         height="520px"
