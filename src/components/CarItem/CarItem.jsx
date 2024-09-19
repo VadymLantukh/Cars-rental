@@ -87,7 +87,7 @@ const CarItem = ({
       >
         <svg className={css.iconFavorite} width="18" height="18">
           <use
-            href={`../../../src/img/symbol-defs.svg#${
+            href={`../../../src/images/symbol-defs.svg#${
               isFavorite ? "active" : "normal"
             }`}
           />
