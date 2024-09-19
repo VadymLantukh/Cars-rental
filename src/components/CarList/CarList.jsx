@@ -1,5 +1,4 @@
 import css from "./CarList.module.css";
-
 import { useDispatch, useSelector } from "react-redux";
 import { selectFilterCars } from "../../redux/cars/selectors";
 import CarItem from "../CarItem/CarItem";

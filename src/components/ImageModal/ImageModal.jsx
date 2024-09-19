@@ -79,9 +79,7 @@ const ImageModal = () => {
 
       <div className={css.listConditions}>
         {formatRentalConditions(selectIsCar.rentalConditions)}
-        <p
-          className={css.modalCondition}
-        >
+        <p className={css.modalCondition}>
           Mileage:{"  "}
           <span className={css.colorText}>
             {selectIsCar.mileage.toLocaleString()}

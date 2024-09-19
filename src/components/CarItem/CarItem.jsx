@@ -71,14 +71,14 @@ const CarItem = ({
         <p>{rentalPrice}</p>
       </div>
 
-        <p className={css.AddInfo}>
-          {city} | {country} | {rentalCompany} | {type} | {model} | {id} |{" "}
-          {functionalities?.[0]}
-        </p>
+      <p className={css.AddInfo}>
+        {city} | {country} | {rentalCompany} | {type} | {model} | {id} |{" "}
+        {functionalities?.[0]}
+      </p>
 
       <button className={css.btnMore} type="button" onClick={handleLearnMore}>
-          Learn more
-        </button>
+        Learn more
+      </button>
 
       <button
         className={css.btnFavorite}

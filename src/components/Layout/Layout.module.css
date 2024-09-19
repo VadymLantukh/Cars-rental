@@ -5,3 +5,14 @@
   justify-content: center;
   align-items: center;
 }
+
+.textLoader {
+  font-size: 18px;
+  color: #3470ff;
+}
+
+.boxSuspense {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
