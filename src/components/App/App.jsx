@@ -7,7 +7,6 @@ const FavoritesPage = lazy(() =>
   import("../../pages/FavoritesPage/FavoritesPage")
 );
 
-import "./App.module.css";
 import Layout from "../Layout/Layout";
 
 function App() {
