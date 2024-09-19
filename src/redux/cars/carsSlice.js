@@ -41,7 +41,7 @@ export const carsSlice = createSlice({
       })
 
       .addCase(fetchMoreCarsThunk.fulfilled, (state, action) => {
-        state.items.push(...state.items, ...action.payload);
+        state.items.push(...action.payload);
         state.filterItems.push(...action.payload);
       })
 

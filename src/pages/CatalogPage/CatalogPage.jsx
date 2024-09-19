@@ -1,4 +1,4 @@
-// import css from "./CatalogPage.module.css";
+import css from "./CatalogPage.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import CarList from "../../components/CarList/CarList";
@@ -32,16 +32,26 @@ const CatalogPage = () => {
   }, [isLastPage, page]);
 
   return (
-    <div>
+    <div className={css.wrapperCatalog}>
       <FilterCar />
-      <CarList />
-      <ImageModal />
-      {isLoading && (
-        <div>
-          <PulseLoader color="#3470FF" size={16} />
-        </div>
-      )}
-      {!isLastPage && <button onClick={handleLoadMore}>Load more</button>}
+      <div className={css.boxCatalog}>
+        <CarList />
+        <ImageModal />
+        {isLoading && (
+          <div>
+            <PulseLoader
+              color="#3470FF"
+              size={16}
+              className={css.spinnersMore}
+            />
+          </div>
+        )}
+        {!isLastPage && !isLoading && (
+          <button onClick={handleLoadMore} className={css.btnLoadMore}>
+            Load more
+          </button>
+        )}
+      </div>
     </div>
   );
 };

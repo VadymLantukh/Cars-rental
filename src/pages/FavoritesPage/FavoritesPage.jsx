@@ -17,8 +17,8 @@ const FavoritesPage = () => {
 
   return (
     <div>
-      <h1>My favorite cars</h1>
-      <ul>
+      <h1 className={css.titleFavorite}>My favorite cars</h1>
+      <ul className={css.listFavorite}>
         {favoriteCars.map((car) => {
           return (
             <li key={car.id} className={css.itemFavorite}>

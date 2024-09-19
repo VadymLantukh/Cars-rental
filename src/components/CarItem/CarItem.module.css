@@ -1,3 +1,38 @@
+.imgCar {
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.boxMainInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.AddInfo {
+  color: rgba(18, 20, 23, 0.5);
+  font-size: 12px;
+}
+
+.btnMore {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  width: 274px;
+  color: #fff;
+  border-radius: 12px;
+  background-color: #3470ff;
+  transition: background-color 250ms linear;
+}
+
+.btnMore:hover {
+  background-color: #0b44cd;
+}
+
 .btnFavorite {
   position: absolute;
   top: 14px;
@@ -6,5 +41,5 @@
 }
 
 .btnFavorite:hover {
-  transform: scale(1.10);
+  transform: scale(1.1);
 }

@@ -6,11 +6,13 @@
 
 .navLink {
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #3470ff;
   border-radius: 6px;
   color: #fff;
-  padding: 5px;
+  width: 150px;
+  height: 30px;
   transition: all 250ms linear;
 }
 

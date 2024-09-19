@@ -1,0 +1,83 @@
+.boxFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.select :global(.react-select__control) {
+  border-radius: 14px;
+  background-color: #f7f7fb;
+  font-size: 18px;
+  height: 48px;
+  width: 224px;
+  cursor: pointer;
+  border: 1px solid #f7f7fb;
+  transition: border-color 250ms linear;
+}
+
+.select :global(.react-select__control):hover {
+  border-color: 1px solid #121417;
+}
+
+.select :global(.react-select__option) {
+  background-color: #fff;
+  color: rgba(18, 20, 23, 0.2);
+  cursor: pointer;
+  transition: color 250ms linear;
+}
+
+.select :global(.react-select__option:hover) {
+  color: #121417;
+}
+
+.select :global(.react-select__option--is-selected) {
+  background-color: #f7f7fb;
+  color: #121417;
+}
+
+.select :global(.react-select__menu) {
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+  background-color: #fff;
+  width: 224px;
+  height: 272px;
+  border-radius: 14px;
+  border: 1px solid rgba(18, 20, 23, 0.05);
+}
+
+.btnSeacrh {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #3470ff;
+  width: 224px;
+  height: 48px;
+  display: flex;
+  padding: 14px 44px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms linear;
+}
+
+.btnSeacrh:hover {
+  background-color: #0b44cd;
+}
+
+.btnReset {
+  color: #fff;
+  width: 224px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #3470ff;
+  height: 48px;
+  display: flex;
+  padding: 14px 44px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms linear;
+}
+
+.btnReset:hover {
+  background-color: #0b44cd;
+}

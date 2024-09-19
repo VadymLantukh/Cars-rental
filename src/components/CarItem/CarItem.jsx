@@ -29,6 +29,8 @@ const CarItem = ({
     dispatch(toggleFavorite(id));
   };
 
+  const [, city, country] = address.split(", ");
+
   const isFavorite = useSelector(selectFavoriteCars).includes(id);
 
   const handleLearnMore = () => {
@@ -55,26 +57,28 @@ const CarItem = ({
 
   return (
     <>
-      <img src={img} alt={`${make} ${model}`} width="274px" height="268px" />
-      <div>
+      <img
+        className={css.imgCar}
+        src={img}
+        alt={`${make} ${model}`}
+        width="274px"
+        height="268px"
+      />
+      <div className={css.boxMainInfo}>
         <p>
           {make} {model}, {year}
         </p>
         <p>{rentalPrice}</p>
       </div>
 
-      <div>
-        <p>{address}</p>
-        <p>{rentalCompany}</p>
-        <p>{type}</p>
-        <p>{model}</p>
-        <p>{id}</p>
-        <p>{functionalities?.[0]}</p>
-      </div>
+        <p className={css.AddInfo}>
+          {city} | {country} | {rentalCompany} | {type} | {model} | {id} |{" "}
+          {functionalities?.[0]}
+        </p>
 
-      <button type="button" onClick={handleLearnMore}>
-        Learn more
-      </button>
+      <button className={css.btnMore} type="button" onClick={handleLearnMore}>
+          Learn more
+        </button>
 
       <button
         className={css.btnFavorite}

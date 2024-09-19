@@ -1,3 +1,6 @@
 .headerBox {
   padding: 10px 0;
+  margin-bottom: 34px;
+  display: flex;
+  justify-content: center;
 }

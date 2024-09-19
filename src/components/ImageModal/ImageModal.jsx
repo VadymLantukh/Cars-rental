@@ -12,11 +12,32 @@ const ImageModal = () => {
   const selectIsCar = useSelector(selectCar);
   const dispatch = useDispatch();
 
+  if (!selectIsCar) return null;
+
+  const [, city, country] = selectIsCar.address.split(", ");
+
+  const formatRentalConditions = (conditions) => {
+    const conditionsArray = conditions.split("\n");
+    return conditionsArray.map((condition, index) => {
+      if (condition.includes("Minimum age")) {
+        const [text, age] = condition.split(":");
+        return (
+          <p key={index} className={css.modalCondition}>
+            {text}: <span className={css.colorText}>{age}</span>
+          </p>
+        );
+      }
+      return (
+        <p key={index} className={css.modalConditionItem}>
+          {condition}
+        </p>
+      );
+    });
+  };
+
   const handleCLoseModal = () => {
     dispatch(closeModal());
   };
-
-  if (!selectIsCar) return null;
 
   return (
     <ReactModal
@@ -25,46 +46,58 @@ const ImageModal = () => {
       style={customStyle}
     >
       <img
+        className={css.modalImgCar}
         src={selectIsCar.img}
         alt={`${selectIsCar.make} ${selectIsCar.model}`}
-        width="426px"
+        width="461px"
         height="248px"
       />
-      <h3>
-        {selectIsCar.make} {selectIsCar.model}, {selectIsCar.year}
+
+      <h3 className={css.modalMainText}>
+        {selectIsCar.make}{" "}
+        <span className={css.colorText}>{selectIsCar.model}</span>,{" "}
+        {selectIsCar.year}
       </h3>
-      <p>
-        {selectIsCar.address} | Id: {selectIsCar.id} | Year: {selectIsCar.year}{" "}
-        | Type: {selectIsCar.type} <br /> Fuel Consumption:{" "}
+
+      <p className={css.modalAddText}>
+        {city} | {country} | Id: {selectIsCar.id} | Year: {selectIsCar.year} |
+        Type: {selectIsCar.type} <br /> Fuel Consumption:{" "}
         {selectIsCar.fuelConsumption} | Engine size: {selectIsCar.engineSize}
       </p>
-      <p>{selectIsCar.description}</p>
-      <p>Aceessories and funcionalities:</p>
-      <p>
+
+      <p className={css.modalDescrText}>{selectIsCar.description}</p>
+
+      <p className={css.modalAcrrssorText}>Aceessories and funcionalities:</p>
+
+      <p className={css.modalFunctionText}>
         {[...selectIsCar.accessories.join(" | ")]}
         <br />
         {[...selectIsCar.functionalities.join(" | ")]}
       </p>
-      <p>Rental Conditions:</p>
-      <div>
-        {selectIsCar.rentalConditions.split("\n").map((condition, index) => (
-          <div key={index}>
-            {condition
-              .split("")
-              .map((part, i) => (i === 1 ? <span key={i}>{part}</span> : part))}
-          </div>
-        ))}
-        <p>
-          Mileage: <span>{selectIsCar.mileage}</span>
-        </p>
-        <p>
-          Price: <span>{selectIsCar.rentalPrice}</span>
-        </p>
-      </div>
 
-      <button>
+      <p className={css.modalConditions}>Rental Conditions:</p>
+
+      <div className={css.listConditions}>
+        {formatRentalConditions(selectIsCar.rentalConditions)}
+        <p
+          className={css.modalCondition}
+        >
+          Mileage:{"  "}
+          <span className={css.colorText}>
+            {selectIsCar.mileage.toLocaleString()}
+          </span>
+        </p>
+        {
+          <p className={css.modalCondition}>
+            Price:{" "}
+            <span className={css.colorText}> {selectIsCar.rentalPrice} </span>
+          </p>
+        }
+      </div>
+      <button className={css.modalBtnRental}>
         <a href="tel:+380730000000">Rental car</a>
       </button>
+
       <button className={css.btnCloseModal} onClick={handleCLoseModal}>
         <svg width="24" height="24" stroke="#121417">
           <use href={"../../../src/img/symbol-defs.svg#close"} />

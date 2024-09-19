@@ -1,0 +1,26 @@
+.boxHome {
+  display: flex;
+  gap: 120px;
+  padding-top: 30px;
+}
+
+.boxInfo {
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titleHome {
+  color: #3470ff;
+  line-height: 1.2;
+}
+
+.infoPage {
+  color: #0b44cd;
+  font-size: 20px;
+}
+
+.photoHome {
+  border-radius: 10px;
+}
