@@ -70,6 +70,7 @@
   color: #121417;
   font-size: 18px;
   font-weight: 500;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
 }
 
 .inputMileageRight {
