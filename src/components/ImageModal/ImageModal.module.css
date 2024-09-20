@@ -78,7 +78,8 @@
   transition: background-color 250ms linear;
 }
 
-.modalBtnRental:hover {
+.modalBtnRental:hover,
+.modalBtnRental:focus {
   background-color: #0b44cd;
 }
 
@@ -89,6 +90,7 @@
   transition: transform, 350ms linear;
 }
 
-.btnCloseModal:hover {
+.btnCloseModal:hover,
+.btnCloseModal:focus {
   transform: scale(1.1);
 }

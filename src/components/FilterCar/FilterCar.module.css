@@ -59,7 +59,8 @@
   transition: background-color 250ms linear;
 }
 
-.btnSeacrh:hover {
+.btnSeacrh:hover,
+.btnSeacrh:focus {
   background-color: #0b44cd;
 }
 
@@ -78,6 +79,7 @@
   transition: background-color 250ms linear;
 }
 
-.btnReset:hover {
+.btnReset:hover,
+.btnReset:focus {
   background-color: #0b44cd;
 }

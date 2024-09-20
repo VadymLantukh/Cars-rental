@@ -16,7 +16,8 @@
   transition: all 250ms linear;
 }
 
-.navLink:hover {
+.navLink:hover,
+.navLink:focus {
   transform: scale(1.05);
   background-color: #0b44cd;
 }

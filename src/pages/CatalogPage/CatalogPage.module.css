@@ -23,7 +23,8 @@
   transition: background-color 250ms linear;
 }
 
-.btnLoadMore:hover {
+.btnLoadMore:hover,
+.btnLoadMore:focus {
   background-color: #0b44cd;
 }
 

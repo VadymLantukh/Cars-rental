@@ -29,7 +29,8 @@
   transition: background-color 250ms linear;
 }
 
-.btnMore:hover {
+.btnMore:hover,
+.btnMore:focus {
   background-color: #0b44cd;
 }
 
@@ -40,6 +41,7 @@
   transition: transform, 350ms linear;
 }
 
-.btnFavorite:hover {
+.btnFavorite:hover,
+.btnFavorite:focus {
   transform: scale(1.1);
 }

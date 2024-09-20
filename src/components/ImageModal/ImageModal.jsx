@@ -6,6 +6,7 @@ import { selectCar, selectIsOpenModal } from "../../redux/modal/selectors";
 import { closeModal } from "../../redux/modal/slice";
 
 import css from "./ImageModal.module.css";
+import { IoCloseOutline } from "react-icons/io5";
 ReactModal.setAppElement("#root");
 
 const ImageModal = () => {
@@ -98,9 +99,7 @@ const ImageModal = () => {
       </button>
 
       <button className={css.btnCloseModal} onClick={handleCLoseModal}>
-        <svg width="24" height="24" stroke="#121417">
-          <use href={"../../../src/img/symbol-defs.svg#close"} />
-        </svg>
+        <IoCloseOutline size='24'/>
       </button>
     </ReactModal>
   );
