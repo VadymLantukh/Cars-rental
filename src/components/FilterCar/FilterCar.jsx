@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
+import numeral from "numeral";
+import toast from "react-hot-toast";
 
 import { brandOptions, priceOptions } from "../../helpers/brandAndPrice";
 import { filterCars } from "../../redux/cars/carsSlice";
+import { selectFilterCars } from "../../redux/cars/selectors";
+import { handleMileageChange } from "../../helpers/numeral";
 
 import css from "./FilterCar.module.css";
-import { selectFilterCars } from "../../redux/cars/selectors";
-import toast from "react-hot-toast";
 
 const FilterCar = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -28,12 +30,14 @@ const FilterCar = () => {
 
   const handleFilter = () => {
     setIsSearch(true);
+    const mileageFromValue = numeral(mileageFrom).value() || 0;
+    const mileageToValue = numeral(mileageTo).value() || 0;
     dispatch(
       filterCars({
         brand: brand?.value,
         price: price?.value,
-        mileageFrom: mileageFrom,
-        mileageTo: mileageTo,
+        mileageFrom: mileageFromValue,
+        mileageTo: mileageToValue,
       })
     );
   };
@@ -44,14 +48,6 @@ const FilterCar = () => {
 
   const handleChangeSelectPrice = (selected) => {
     setPrice(selected);
-  };
-
-  const handleChangeFrom = (e) => {
-    setMileageFrom(e.target.value);
-  };
-
-  const handleChangeTo = (e) => {
-    setMileageTo(e.target.value);
   };
 
   const handleReset = () => {
@@ -100,17 +96,17 @@ const FilterCar = () => {
         <div className={css.inputBox}>
           <input
             className={css.inputMileageLeft}
-            type="number"
+            type="text"
             placeholder="From"
             value={mileageFrom}
-            onChange={handleChangeFrom}
+            onChange={(e) => handleMileageChange(e, setMileageFrom)}
           />
           <input
             className={css.inputMileageRight}
-            type="number"
+            type="text"
             placeholder="To"
             value={mileageTo}
-            onChange={handleChangeTo}
+            onChange={(e) => handleMileageChange(e, setMileageTo)}
           />
         </div>
       </label>
