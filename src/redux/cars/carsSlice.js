@@ -8,20 +8,22 @@ const initialState = {
   isLoading: false,
   isError: false,
 };
-  
+
 export const carsSlice = createSlice({
   name: "cars",
   initialState,
   reducers: {
     toggleFavorite: (state, action) => {
-      const carId = action.payload;
-      const index = state.favoriteItems.indexOf(carId);
-      if (index > -1) {
-        state.favoriteItems.splice(index, 1);
+      const carIndex = state.favoriteItems.findIndex(
+        (car) => car.id === action.payload.id
+      );
+      if (carIndex !== -1) {
+        state.favoriteItems.splice(carIndex, 1);
       } else {
-        state.favoriteItems.push(carId);
+        state.favoriteItems.push(action.payload);
       }
     },
+
     filterCars: (state, action) => {
       const { brand, price, mileageFrom, mileageTo } = action.payload;
       state.filterItems = state.items.filter((car) => {

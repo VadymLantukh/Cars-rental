@@ -69,13 +69,19 @@
   background-color: #3470ff;
   width: 168px;
   height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   font-weight: 600;
   font-size: 14px;
   color: #fff;
   transition: background-color 250ms linear;
+}
+
+.linkRental {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalBtnRental:hover,

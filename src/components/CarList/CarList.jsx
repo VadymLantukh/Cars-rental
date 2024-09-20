@@ -13,7 +13,7 @@ const CarList = () => {
       {cars.map((car) => {
         return (
           <li key={car.id} className={css.itemCar}>
-            <CarItem {...car} />
+            <CarItem car={car} />
           </li>
         );
       })}

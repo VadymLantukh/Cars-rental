@@ -8,7 +8,7 @@ import css from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
   const favoriteCars = useSelector(selectFilterFavorite);
-
+  console.log(favoriteCars);
   return (
     <div>
       <h1 className={css.titleFavorite}>My favorite cars</h1>
@@ -17,7 +17,7 @@ const FavoritesPage = () => {
           {favoriteCars.map((car) => {
             return (
               <li key={car.id} className={css.itemFavorite}>
-                <CarItem {...car} />
+                <CarItem car={car} />
               </li>
             );
           })}

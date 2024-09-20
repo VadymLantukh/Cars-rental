@@ -1,9 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
-
-import { carsReducer } from "./cars/carsSlice";
-import { modalReducer } from "./modal/slice";
-
 import {
   persistStore,
   persistReducer,
@@ -14,9 +9,14 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+import { carsReducer } from "./cars/carsSlice";
+import { modalReducer } from "./modal/slice";
 
 const carsPersistConfig = {
-  key: "cars",
+  key: "carsFavorite",
+  version: 1,
   storage,
   whitelist: ["favoriteItems"],
 };

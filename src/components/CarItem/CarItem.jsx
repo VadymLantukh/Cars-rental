@@ -7,75 +7,42 @@ import { selectFavoriteCars } from "../../redux/cars/selectors";
 
 import css from "./CarItem.module.css";
 
-const CarItem = ({
-  id,
-  img,
-  make,
-  model,
-  year,
-  rentalPrice,
-  address,
-  rentalCompany,
-  type,
-  functionalities,
-  fuelConsumption,
-  engineSize,
-  description,
-  accessories,
-  rentalConditions,
-  mileage,
-}) => {
+const CarItem = ({ car }) => {
   const dispatch = useDispatch();
 
   const handleToggleFavorite = () => {
-    dispatch(toggleFavorite(id));
+    dispatch(toggleFavorite(car));
   };
 
-  const [, city, country] = address.split(", ");
+  const [, city, country] = car.address.split(", ");
 
-  const isFavorite = useSelector(selectFavoriteCars).includes(id);
+  const isFavorite = useSelector(selectFavoriteCars).find(
+    (item) => item.id === car.id
+  );
 
   const handleLearnMore = () => {
-    dispatch(
-      openModal({
-        id,
-        img,
-        make,
-        model,
-        year,
-        rentalPrice,
-        type,
-        functionalities,
-        address,
-        fuelConsumption,
-        engineSize,
-        description,
-        accessories,
-        rentalConditions,
-        mileage,
-      })
-    );
+    dispatch(openModal(car));
   };
 
   return (
     <>
       <img
         className={css.imgCar}
-        src={img}
-        alt={`${make} ${model}`}
+        src={car.img}
+        alt={`${car.make} ${car.model}`}
         width="274px"
         height="268px"
       />
       <div className={css.boxMainInfo}>
         <p>
-          {make} {model}, {year}
+          {car.make} {car.model}, {car.year}
         </p>
-        <p>{rentalPrice}</p>
+        <p>{car.rentalPrice}</p>
       </div>
 
       <p className={css.AddInfo}>
-        {city} | {country} | {rentalCompany} | {type} | {model} | {id} |{" "}
-        {functionalities?.[0]}
+        {city} | {country} | {car.rentalCompany} | {car.type} | {car.model} |{" "}
+        {car.id} | {car.functionalities?.[0]}
       </p>
 
       <button className={css.btnMore} type="button" onClick={handleLearnMore}>

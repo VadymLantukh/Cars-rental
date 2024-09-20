@@ -95,7 +95,7 @@ const ImageModal = () => {
         }
       </div>
       <button className={css.modalBtnRental}>
-        <a href="tel:+380730000000">Rental car</a>
+        <a className={ css.linkRental} href="tel:+380730000000">Rental car</a>
       </button>
 
       <button className={css.btnCloseModal} onClick={handleCLoseModal}>
