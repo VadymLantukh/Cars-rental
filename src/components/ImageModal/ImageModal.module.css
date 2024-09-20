@@ -11,6 +11,7 @@
 
 .modalAddText {
   font-size: 12px;
+  line-height: 1.1;
   color: rgba(18, 20, 23, 0.5);
   margin-bottom: 14px;
 }
