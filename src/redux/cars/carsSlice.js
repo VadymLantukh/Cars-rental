@@ -23,12 +23,16 @@ export const carsSlice = createSlice({
       }
     },
     filterCars: (state, action) => {
-      const { brand, price } = action.payload;
+      const { brand, price, mileageFrom, mileageTo } = action.payload;
       state.filterItems = state.items.filter((car) => {
-        const brandMatch =
+        const isSelectBrand =
           !brand || car.make.toLowerCase() === brand.toLowerCase();
-        const priceMatch = !price || car.rentalPrice.replace("$", "") <= price;
-        return brandMatch && priceMatch;
+        const isSelectPrice =
+          !price || car.rentalPrice.replace("$", "") <= price;
+        const isSelectMileage =
+          (!mileageFrom || car.mileage >= mileageFrom) &&
+          (!mileageTo || car.mileage <= mileageTo);
+        return isSelectBrand && isSelectPrice && isSelectMileage;
       });
     },
   },

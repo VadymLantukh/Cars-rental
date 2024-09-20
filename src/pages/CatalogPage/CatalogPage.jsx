@@ -35,24 +35,18 @@ const CatalogPage = () => {
   return (
     <div className={css.wrapperCatalog}>
       <FilterCar />
-      <div className={css.boxCatalog}>
-        <CarList />
-        <ImageModal />
-        {isLoading && (
-          <div>
-            <PulseLoader
-              color="#3470FF"
-              size={16}
-              className={css.spinnersMore}
-            />
-          </div>
-        )}
-        {!isLastPage && !isLoading && (
-          <button onClick={handleLoadMore} className={css.btnLoadMore}>
-            Load more
-          </button>
-        )}
-      </div>
+      <CarList />
+      <ImageModal />
+      {isLoading && (
+        <div>
+          <PulseLoader color="#3470FF" size={16} className={css.spinnersMore} />
+        </div>
+      )}
+      {!isLastPage && !isLoading && (
+        <button onClick={handleLoadMore} className={css.btnLoadMore}>
+          Load more
+        </button>
+      )}
     </div>
   );
 };

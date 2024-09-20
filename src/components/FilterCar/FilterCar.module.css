@@ -1,7 +1,8 @@
 .boxFilter {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
 }
 
 .select :global(.react-select__control) {
@@ -13,6 +14,8 @@
   cursor: pointer;
   border: 1px solid #f7f7fb;
   transition: border-color 250ms linear;
+  margin-top: 8px;
+  color: red;
 }
 
 .select :global(.react-select__control):hover {
@@ -44,6 +47,48 @@
   border: 1px solid rgba(18, 20, 23, 0.05);
 }
 
+.labelSelect {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #8a8a89;
+  font-weight: 500;
+}
+
+.inputBox {
+  display: flex;
+}
+
+.inputMileageLeft {
+  margin-top: 8px;
+  width: 160px;
+  height: 48px;
+  border-radius: 14px 0px 0px 14px;
+  border: 0;
+  background-color: #f7f7fb;
+  padding: 14px 0 14px 24px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.inputMileageRight {
+  margin-top: 8px;
+  width: 160px;
+  height: 48px;
+  border-radius: 0px 14px 14px 0px;
+  border: 0;
+  background-color: #f7f7fb;
+  padding: 14px 0 14px 24px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.inputMileage:focus {
+  border-color: 1px solid #121417;
+}
+
 .btnSeacrh {
   color: #fff;
   font-size: 14px;
@@ -53,7 +98,6 @@
   width: 224px;
   height: 48px;
   display: flex;
-  padding: 14px 44px;
   justify-content: center;
   align-items: center;
   transition: background-color 250ms linear;
@@ -73,7 +117,6 @@
   background-color: #3470ff;
   height: 48px;
   display: flex;
-  padding: 14px 44px;
   justify-content: center;
   align-items: center;
   transition: background-color 250ms linear;
