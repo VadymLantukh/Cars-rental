@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://66e865deb17821a9d9dc9172.mockapi.io/";
+axios.defaults.baseURL = "https://66e865deb17821a9d9dc9172W.mockapi.io/";
 axios.defaults.params = { page: 1, limit: 12 };
 
 export const fetchCarsThunk = createAsyncThunk(
@@ -11,7 +11,7 @@ export const fetchCarsThunk = createAsyncThunk(
       const { data } = await axios.get("adverts");
       return data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -23,7 +23,7 @@ export const fetchMoreCarsThunk = createAsyncThunk(
       const { data } = await axios.get("adverts", { params: { page } });
       return data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

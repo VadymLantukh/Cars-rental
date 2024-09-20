@@ -17,3 +17,8 @@
   width: 274px;
   height: 426px;
 }
+
+.textError {
+  font-size: 20px;
+  color: #3470ff;
+}

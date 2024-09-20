@@ -8,6 +8,7 @@ const initialState = {
   isLoading: false,
   isError: false,
 };
+
 export const carsSlice = createSlice({
   name: "cars",
   initialState,

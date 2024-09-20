@@ -19,15 +19,23 @@ const FavoritesPage = () => {
   return (
     <div>
       <h1 className={css.titleFavorite}>My favorite cars</h1>
-      <ul className={css.listFavorite}>
-        {favoriteCars.map((car) => {
-          return (
-            <li key={car.id} className={css.itemFavorite}>
-              <CarItem {...car} />
-            </li>
-          );
-        })}
-      </ul>
+      {favoriteCars.length > 0 ? (
+        <ul className={css.listFavorite}>
+          {favoriteCars.map((car) => {
+            return (
+              <li key={car.id} className={css.itemFavorite}>
+                <CarItem {...car} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+          <p className={ css.textError}>
+          If you have added anything to your favorites yet, click on the icon on
+          the car card
+        </p>
+      )}
+
       <ImageModal />
     </div>
   );

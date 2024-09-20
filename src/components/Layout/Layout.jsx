@@ -2,12 +2,20 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { MoonLoader } from "react-spinners";
+import { useSelector } from "react-redux";
 
+import { selectIsError } from "../../redux/cars/selectors";
 import AppBar from "../AppBar/AppBar";
+import ErrorServer from "../ErrorServer/ErrorServer";
+
 import css from "./Layout.module.css";
 
 const Layout = () => {
-  return (
+  const isError = useSelector(selectIsError);
+
+  return isError ? (
+    <ErrorServer />
+  ) : (
     <div className={css.wrapper}>
       <AppBar />
       <Suspense
