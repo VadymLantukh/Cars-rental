@@ -10,6 +10,7 @@ import { selectFilterCars } from "../../redux/cars/selectors";
 import { handleMileageChange } from "../../helpers/numeral";
 
 import css from "./FilterCar.module.css";
+import s from "./Select.module.css";
 
 const FilterCar = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -70,7 +71,7 @@ const FilterCar = () => {
       <label className={css.labelSelect}>
         Car brand
         <Select
-          className={css.select}
+          className={s.select}
           options={brandOptions}
           onChange={handleChangeSelect}
           value={brand}
@@ -82,7 +83,7 @@ const FilterCar = () => {
       <label className={css.labelSelect}>
         Price/ 1 hour
         <Select
-          className={css.select}
+          className={s.selectPrice}
           options={priceOptions}
           onChange={handleChangeSelectPrice}
           value={price}
@@ -111,10 +112,10 @@ const FilterCar = () => {
         </div>
       </label>
 
-      <button type="button" onClick={handleFilter} className={css.btnSeacrh}>
+      <button type="button" onClick={handleFilter} className={css.btnFilter}>
         Search
       </button>
-      <button type="button" onClick={handleReset} className={css.btnReset}>
+      <button type="button" onClick={handleReset} className={css.btnFilter}>
         Reset fields
       </button>
     </div>
