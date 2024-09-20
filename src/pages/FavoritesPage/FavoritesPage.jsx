@@ -8,10 +8,10 @@ import css from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
   const favoriteCars = useSelector(selectFavoriteCars);
-  console.log(favoriteCars);
+
   return (
     <div>
-      <h1 className={css.titleFavorite}>My favorite cars</h1>
+      <h2 className={css.titleFavorite}>My favorite cars</h2>
       {favoriteCars.length > 0 ? (
         <ul className={css.listFavorite}>
           {favoriteCars.map((car) => {

@@ -1,12 +1,12 @@
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
+import { IoCloseOutline } from "react-icons/io5";
 
 import { customStyle } from "../../helpers/modalStyles";
 import { selectCar, selectIsOpenModal } from "../../redux/modal/selectors";
 import { closeModal } from "../../redux/modal/slice";
 
 import css from "./ImageModal.module.css";
-import { IoCloseOutline } from "react-icons/io5";
 ReactModal.setAppElement("#root");
 
 const ImageModal = () => {
@@ -95,11 +95,13 @@ const ImageModal = () => {
         }
       </div>
       <button className={css.modalBtnRental}>
-        <a className={ css.linkRental} href="tel:+380730000000">Rental car</a>
+        <a className={css.linkRental} href="tel:+380730000000">
+          Rental car
+        </a>
       </button>
 
       <button className={css.btnCloseModal} onClick={handleCLoseModal}>
-        <IoCloseOutline size='24'/>
+        <IoCloseOutline size="24" />
       </button>
     </ReactModal>
   );

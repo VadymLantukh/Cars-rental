@@ -11,7 +11,6 @@ import { fetchCarsThunk } from "../../redux/cars/operations";
 
 import css from "./Layout.module.css";
 
-
 const Layout = () => {
   const isError = useSelector(selectIsError);
   const dispatch = useDispatch();
