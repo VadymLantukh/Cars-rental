@@ -1,20 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { selectFilterFavorite } from "../../redux/cars/selectors";
 import CarItem from "../../components/CarItem/CarItem";
-import { fetchCarsThunk } from "../../redux/cars/operations";
 import ImageModal from "../../components/ImageModal/ImageModal";
 
 import css from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
   const favoriteCars = useSelector(selectFilterFavorite);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCarsThunk());
-  }, [dispatch]);
 
   return (
     <div>
@@ -30,7 +23,7 @@ const FavoritesPage = () => {
           })}
         </ul>
       ) : (
-          <p className={ css.textError}>
+        <p className={css.textError}>
           If you have added anything to your favorites yet, click on the icon on
           the car card
         </p>

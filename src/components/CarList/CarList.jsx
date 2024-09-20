@@ -1,19 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { selectFilterCars } from "../../redux/cars/selectors";
 import CarItem from "../CarItem/CarItem";
-import { fetchCarsThunk } from "../../redux/cars/operations";
 
 import css from "./CarList.module.css";
 
 const CarList = () => {
   const cars = useSelector(selectFilterCars);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCarsThunk());
-  }, [dispatch]);
 
   return (
     <ul className={css.carList}>
