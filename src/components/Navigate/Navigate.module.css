@@ -4,20 +4,28 @@
   gap: 40px;
 }
 
-.navLink {
+.navBox > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3470ff;
+  border: 1px solid #3470ff;
+  color: #3470ff;
   border-radius: 6px;
-  color: #fff;
   width: 150px;
   height: 30px;
   transition: all 250ms linear;
 }
 
-.navLink:hover,
-.navLink:focus {
-  transform: scale(1.05);
-  background-color: #0b44cd;
+.inactive {
+  transition: transform 250ms linear;
+}
+
+.inactive:hover,
+.inactive:focus {
+  transform: scale(1.07);
+}
+
+.navBox > .active {
+  background-color: #3470ff;
+  color: #fff;
 }
