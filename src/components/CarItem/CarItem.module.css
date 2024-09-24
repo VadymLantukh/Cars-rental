@@ -1,8 +1,6 @@
 .imgCar {
   border-radius: 14px;
   margin-bottom: 14px;
-  object-fit: cover;
-  object-position: center;
 }
 
 .boxMainInfo {
