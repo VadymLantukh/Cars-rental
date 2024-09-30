@@ -9,6 +9,15 @@
   margin-bottom: 8px;
 }
 
+.boxInfoCar {
+  display: flex;
+  gap: 4px;
+}
+
+.modelCar {
+  color: #3470ff;
+}
+
 .AddInfo {
   color: rgba(18, 20, 23, 0.5);
   font-size: 12px;

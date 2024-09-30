@@ -34,9 +34,13 @@ const CarItem = ({ car }) => {
         height="268px"
       />
       <div className={css.boxMainInfo}>
-        <p>
-          {car.make} {car.model}, {car.year}
-        </p>
+        <div className={css.boxInfoCar}>
+          <p>{car.make}</p>
+          <p>
+            <span className={css.modelCar}>{car.model}</span>,
+          </p>
+          <p>{car.year}</p>
+        </div>
         <p>{car.rentalPrice}</p>
       </div>
 
