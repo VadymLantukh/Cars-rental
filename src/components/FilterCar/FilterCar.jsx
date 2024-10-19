@@ -68,56 +68,60 @@ const FilterCar = () => {
 
   return (
     <div className={css.boxFilter}>
-      <label className={css.labelSelect}>
-        Car brand
-        <Select
-          className={s.select}
-          options={brandOptions}
-          onChange={handleChangeSelect}
-          value={brand}
-          placeholder="Enter the text"
-          classNamePrefix="react-select"
-        />
-      </label>
-
-      <label className={css.labelSelect}>
-        Price/ 1 hour
-        <Select
-          className={s.selectPrice}
-          options={priceOptions}
-          onChange={handleChangeSelectPrice}
-          value={price}
-          placeholder="To $"
-          classNamePrefix="react-select"
-        />
-      </label>
-
-      <label className={css.labelSelect}>
-        Car mileage / km
-        <div className={css.inputBox}>
-          <input
-            className={css.inputMileageLeft}
-            type="text"
-            placeholder="From"
-            value={mileageFrom}
-            onChange={(e) => handleMileageChange(e, setMileageFrom)}
+      <div className={css.boxSelect}>
+        <label className={css.labelSelect}>
+          Car brand
+          <Select
+            className={s.select}
+            options={brandOptions}
+            onChange={handleChangeSelect}
+            value={brand}
+            placeholder="Enter the text"
+            classNamePrefix="react-select"
           />
-          <input
-            className={css.inputMileageRight}
-            type="text"
-            placeholder="To"
-            value={mileageTo}
-            onChange={(e) => handleMileageChange(e, setMileageTo)}
-          />
-        </div>
-      </label>
+        </label>
 
-      <button type="button" onClick={handleFilter} className={css.btnFilter}>
-        Search
-      </button>
-      <button type="button" onClick={handleReset} className={css.btnFilter}>
-        Reset fields
-      </button>
+        <label className={css.labelSelect}>
+          Price/ 1 hour
+          <Select
+            className={s.selectPrice}
+            options={priceOptions}
+            onChange={handleChangeSelectPrice}
+            value={price}
+            placeholder="To $"
+            classNamePrefix="react-select"
+          />
+        </label>
+
+        <label className={css.labelSelect}>
+          Car mileage / km
+          <div className={css.inputBox}>
+            <input
+              className={css.inputMileageLeft}
+              type="text"
+              placeholder="From"
+              value={mileageFrom}
+              onChange={(e) => handleMileageChange(e, setMileageFrom)}
+            />
+            <input
+              className={css.inputMileageRight}
+              type="text"
+              placeholder="To"
+              value={mileageTo}
+              onChange={(e) => handleMileageChange(e, setMileageTo)}
+            />
+          </div>
+        </label>
+      </div>
+
+      <div className={ css.boxButton}>
+        <button type="button" onClick={handleFilter} className={css.btnFilter}>
+          Search
+        </button>
+        <button type="button" onClick={handleReset} className={css.btnFilter}>
+          Reset fields
+        </button>
+      </div>
     </div>
   );
 };

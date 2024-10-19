@@ -5,6 +5,7 @@ import CarItem from "../../components/CarItem/CarItem";
 import ImageModal from "../../components/ImageModal/ImageModal";
 
 import css from "./FavoritesPage.module.css";
+import { MdFavoriteBorder } from "react-icons/md";
 
 const FavoritesPage = () => {
   const favoriteCars = useSelector(selectFavoriteCars);
@@ -24,8 +25,8 @@ const FavoritesPage = () => {
         </ul>
       ) : (
         <p className={css.textError}>
-          If you have added anything to your favorites yet, click on the icon on
-          the car card
+          If you have added anything to your favorites yet, click on the icon{" "}
+          <MdFavoriteBorder size={26} /> on the car card
         </p>
       )}
 

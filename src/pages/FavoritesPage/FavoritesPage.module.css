@@ -13,6 +13,13 @@
   width: 1184px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .listFavorite {
+    width: 100%;
+    column-gap: 59px;
+  }
+}
+
 .itemFavorite {
   position: relative;
   width: 274px;
@@ -22,4 +29,5 @@
 .textError {
   font-size: 20px;
   color: #3470ff;
+  text-align: center;
 }

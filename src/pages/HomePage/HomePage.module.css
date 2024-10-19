@@ -12,6 +12,14 @@
   gap: 20px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .boxInfo {
+    text-align: start;
+    gap: 30px;
+    width: 100%;
+  }
+}
+
 .titleHome {
   color: #3470ff;
   line-height: 1.2;
